@@ -6,6 +6,12 @@
 // 6. stampare numeri visibili al click
 // 7. aggiungere difficoltà
 
+// esercitazione 2
+// 8. creare funzione per creare 16 numeri casuali (bombe) nel btn play
+// 9. creare una blacklist array dove verrà dato il valore dei numeri
+// 10. creare un if verifica bomba, si = fine gioco, no = aggiungo classe colore + punteggio (+1) e verifico se ha raggiunto la lunghezza della lista numeri limit = fine
+// 11. 
+
 // 1.
 const btnPlayEl = document.querySelector(".btn-play");
 const containerEl = document.querySelector("._container");
@@ -13,6 +19,7 @@ const mainEl = document.querySelector("main");
 const difficultySelectEl = document.querySelector("#difficulty-select");
 
 let limit;
+const blackList = []
 
 // 2.
 // tolgo gli elementi all'interno del contenitore con funzione reset
@@ -66,4 +73,17 @@ function generateSquare(index) {
 // funzione per cambiare la difficolta di gioco
 function changeDifficulty() {
   return (limit = Number(difficultySelectEl.value));
+}
+
+
+// 8.
+function bombGenerator() {
+
+  blackList.length = 0;
+
+  while (blackList.length < 16) {
+      const randomNumber = Math.floor(Math.random() * limit) + 1;
+      if (!blackList.includes(randomNumber)) (blackList.push(randomNumber))
+    }
+    console.log(blackList)
 }
