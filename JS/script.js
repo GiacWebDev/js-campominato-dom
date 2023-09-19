@@ -29,9 +29,11 @@ reset();
 btnPlayEl.addEventListener("click", function () {
   //resetto il contenitore al click (evito la creazione di più contenitori)
   reset();
-
+  
   console.log("cliec");
-
+  // Chiamata alla funzione bombGenerator per generare le bombe
+  bombGenerator().classList.add('bomb');
+  
   // 4.
   for (let i = 1; i <= limit; i++) {
     const square = generateSquare(i);

@@ -76,3 +76,7 @@ main {
 .square.clicked span {
   display: block;
 }
+
+.bomb {
+  background-color: red;
+}
