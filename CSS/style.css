@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.debug {
+  border: 1px solid black;
+}
+
+.debug-a {
+  background-color: aqua;
+}
+
+.main-wrap {
+  height: 100vh;
+  background-color: #5988e7;
+}
+
+/* HEADER */
+header .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+header .form-select {
+  width: 200px;
+}
+
+header button {
+  padding: 5px 30px;
+  background-color: greenyellow;
+  color: #2b3a63;
+  font-weight: 600;
+  border-radius: 7px;
+}
+
+/* CONTENITORE GIOCO */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+._container {
+  max-width: 800px;
+  min-width: 800px;
+  margin: auto;
+
+  & .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: calc(100% / 10); */
+    aspect-ratio: 1/1;
+    background-color: #2b3a63;
+    border-radius: 7px;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+}
+
+.square.clicked {
+  background-color: greenyellow;
+}
+
+.square span {
+  display: none;
+}
+
+.square.clicked span {
+  display: block;
+}

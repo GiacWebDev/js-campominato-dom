@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/style.css" />
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Griglia Campo Minato</title>
+  </head>
+  <body>
+    <div class="main-wrap">
+      <!-- BARRA IN ALTO -->
+      <header>
+        <div class="row p-5">
+          <div class="col">
+            <h1>CAMPO MINATO 💣</h1>
+          </div>
+
+          <div class="col">
+            <select
+              id="difficulty-select"
+              class="form-select"
+              onchange="changeDifficulty()"
+              aria-label="Default select example">
+              <option value="">Seleziona difficoltà</option>
+              <option value="100">Facile</option>
+              <option value="81">Intermedio</option>
+              <option value="49">Difficile</option>
+            </select>
+          </div>
+
+          <div class="col">
+            <button class="btn-play ms-5">PLAY</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="_container pb-4 d-flex flex-wrap"></div>
+      </main>
+
+      <!-- CONTENITORE GIOCO -->
+    </div>
+
+    <!-- JS -->
+    <script src="JS/script.js"></script>
+  </body>
+</html>
