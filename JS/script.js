@@ -19,7 +19,8 @@ const mainEl = document.querySelector("main");
 const difficultySelectEl = document.querySelector("#difficulty-select");
 
 let limit;
-const blackList = []
+let bombList = [];
+const bombsNumber = 16;
 
 // 2.
 // tolgo gli elementi all'interno del contenitore con funzione reset
@@ -30,15 +31,22 @@ btnPlayEl.addEventListener("click", function () {
   //resetto il contenitore al click (evito la creazione di più contenitori)
   reset();
   
+  bombList = [];
+
   console.log("cliec");
   // Chiamata alla funzione bombGenerator per generare le bombe
-  bombGenerator().classList.add('bomb');
+  bombGenerator(limit);
   
   // 4.
   for (let i = 1; i <= limit; i++) {
     const square = generateSquare(i);
     // 5.
     square.addEventListener("click", function () {
+
+      if (bombList.includes(limit[i])) {
+        console.log('boom')
+      }
+
       this.classList.toggle("clicked");
       console.log(this.innerText);
     });
@@ -77,15 +85,30 @@ function changeDifficulty() {
   return (limit = Number(difficultySelectEl.value));
 }
 
-
 // 8.
-function bombGenerator() {
+function bombGenerator(limit) {
 
-  blackList.length = 0;
+  while (bombList.length < bombsNumber){
+    const bomb = Math.floor(Math.random() * limit) + 1;
 
-  while (blackList.length < 16) {
-      const randomNumber = Math.floor(Math.random() * limit) + 1;
-      if (!blackList.includes(randomNumber)) (blackList.push(randomNumber))
-    }
-    console.log(blackList)
+    if (!bombList.includes(bomb)) {
+      bombList.push(bomb);
+  }
 }
+  console.log(bombList);
+  return bombList;
+}
+
+// function uniqueNumber(min, max) {
+//   let randomNumber;
+//   let isValidNumber = false;
+
+//   while(!isValidNumber) {
+//     randomNumber = getRandomNumber(min,max);
+
+//     if (!numbersBlackList.includes(randomNumber)) {
+//       numbersBlackList.push(randomNumber);
+//       isValidNumber = true;
+//     }
+//   }
+// }
